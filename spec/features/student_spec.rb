@@ -82,4 +82,8 @@ describe 'linking from the index page to the show page' do
     visit students_path
     expect(page).to have_link(@student.to_s, href: student_path(@student))
   end
+  <% @students.each do |student| %>
+    <div><%= link_to student.first_name, student_path(student) %></div>
+  <% end %> 
+  
 end
